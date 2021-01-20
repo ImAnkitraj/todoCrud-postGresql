@@ -10,18 +10,18 @@ const client = new Client({
 });
 
 client.connect().then(async ()=>console.log('Postgres database connected'));
-const todoCreateQuery = `CREATE TABLE IF NOT EXISTS todos 
-  (
-      id SERIAL PRIMARY KEY,
-      title VARCHAR(100)
-)`;
+// const todoCreateQuery = `CREATE TABLE IF NOT EXISTS todos 
+//   (
+//       id SERIAL PRIMARY KEY,
+//       title VARCHAR(100)
+// )`;
 
-client.query(todoCreateQuery)
-.then(res=>{
-    console.log(res)
-})
-.catch((err)=>{
-    console.log(err)
-})
+// client.query(todoCreateQuery)
+// .then(res=>{
+//     console.log(res)
+// })
+// .catch((err)=>{
+//     console.log(err)
+// })
 
 module.exports = client;

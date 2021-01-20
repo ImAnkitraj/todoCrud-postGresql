@@ -5,7 +5,6 @@ const crudControllers = require('../controllers/crudControllers');
 router.get('/', async function (req,res){
 
     const result = await crudControllers.getTodos();
-    console.log('/route',result)
     res.send(result)
 
 })
