@@ -9,8 +9,9 @@ router.get('/', async function (req,res){
 
 })
 
-router.post('/todo', async function(req,res){
+router.get('/todo', async function(req,res){
 
+    console.log(req.body)
     const id = parseInt(req.body.id)
     const result = await crudControllers.getTodo(id)
     res.send(result)
@@ -25,15 +26,16 @@ router.post('/add', async function(req,res){
 
 })
 
-router.post('/delete', async function(req,res){
+router.delete('/delete', async function(req,res){
 
+    console.log('delete hit')
     const id = parseInt(req.body.id)
     const result = await crudControllers.deleteTodo(id);
     res.send(result)
 
 })
 
-router.post('/update', async function(req,res){
+router.put('/update', async function(req,res){
 
     const id = parseInt(req.body.id)
     const title = req.body.title
